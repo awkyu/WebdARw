@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build webdarw-webapp",
     "deploy": "gh-pages -d build -b deployed -e webdarw-webapp"
   },
   "eslintConfig": {
