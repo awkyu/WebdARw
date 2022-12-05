@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-WebdARw/[Ll]ibrary/
-WebdARw/[Tt]emp/
-WebdARw/[Oo]bj/
-WebdARw/[Bb]uild/
-WebdARw/[Bb]uilds/
-WebdARw/[Ll]ogs/
-WebdARw/[Mm]emoryCaptures/
+WebdARw_Unity/[Ll]ibrary/
+WebdARw_Unity/[Tt]emp/
+WebdARw_Unity/[Oo]bj/
+WebdARw_Unity/[Bb]uild/
+WebdARw_Unity/[Bb]uilds/
+WebdARw_Unity/[Ll]ogs/
+WebdARw_Unity/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
