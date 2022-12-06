@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getDatabase, ref, onValue } from "firebase/database";
-import { getStorage } from "firebase/storage";
+import { getDatabase, ref as refDB, onValue } from "firebase/database";
+import { getStorage, ref as refStorage, getDownloadURL } from "firebase/storage";
 
 
 // Your web app's Firebase configuration
@@ -20,9 +20,43 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const backendApp = initializeApp(firebaseConfig);
-const backendAnalytics = getAnalytics(app);
-const backendDatabase = getDatabase(app);
-const backendStorage = getStorage(app);
+const backendAnalytics = getAnalytics(backendApp);
+const backendDatabase = getDatabase(backendApp);
+const backendStorage = getStorage(backendApp);
 
-// Stuff for Firebase Realtime DB
+var realtimeDBData; // variable to keep track of firebase realtime db
+var currentlySelectedFBXFile; // variable to keep track of current fbx file to download/select
+
+const updateRealtimeDBData = (trackedVar, newData) => {
+    trackedVar = newData;
+};
+
+// Create reference and listener to realtime db
+const entriesRef = refDB(backendDatabase, 'fbxEntries');
+onValue(entriesRef, (snapshot) => {
+    const data = snapshot.val();
+    console.log(data);
+    // add some update function here
+    updateRealtimeDBData(realtimeDBData, data);
+});
+
+const fbxRef = refStorage(backendStorage, 'fbxfiles');
+
+async function getFBX(reference) {
+    const url = await getDownloadURL(refStorage(fbxRef, reference));
+    console.log(url);
+    const fbxfile = await fetch(url, {mode: 'no-cors'});
+    console.log(fbxfile);
+    return fbxfile;
+}
+
+async function updateCurrentSelectedFBXFile(reference) {
+    currentlySelectedFBXFile = getFBX(reference);
+}
+
+currentlySelectedFBXFile = getFBX('build1/build1_20221205054235.fbx');
+console.log("FBX FILE");
+console.log(currentlySelectedFBXFile);
+
+export default { realtimeDBData, currentlySelectedFBXFile, updateCurrentSelectedFBXFile };
 

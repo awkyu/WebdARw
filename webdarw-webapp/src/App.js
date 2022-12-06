@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { realtimeDBData } from './backend/FirebaseInit.jsx'
 
 function App() {
   return (
