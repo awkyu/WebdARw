@@ -26,12 +26,13 @@ const Scene = (fbxFileURL) => {
     return <primitive object={fbx} scale={2} style={{backgroundColor: "#111111"}} />;
 };
 
-function ModelViewerPopup({fbxVisible, setFbxVisible, setFbxReference, fbxFile}) {
+function ModelViewerPopup({fbxVisible, setFbxVisible, setFbxReference, fbxFile, setSearchParams}) {
 
 
   const handleClose = () => {
     setFbxVisible(false);
     setFbxReference(null);
+    setSearchParams({});
   };
 
   return (

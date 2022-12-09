@@ -75,7 +75,7 @@ function StorageDBManager({fbxFileReference, setFbxFile}) {
         const url = await getDownloadURL(refStorage(fbxRef, reference));
         // console.log(url);
         const fbxfile = await fetch(url, {mode: 'no-cors'});
-        console.log(fbxfile);
+        // console.log(fbxfile);
         return fbxfile;
     }
     
@@ -96,7 +96,7 @@ async function getFBX(reference) {
     const url = window.URL.createObjectURL(blob_data);
     // console.log(blob_data);
     // const url = URL.createObjectURL( blob_data )
-    console.log(url);
+    // console.log(url);
     // const fbxfile = await fetch(url, {mode: 'no-cors'});
     // console.log(fbxfile);
     return url;
@@ -109,7 +109,7 @@ async function getFBXURL(reference) {
     // const url = window.URL.createObjectURL(blob_data);
     // console.log(blob_data);
     // const url = URL.createObjectURL( blob_data )
-    console.log(url);
+    // console.log(url);
     // const fbxfile = await fetch(url, {mode: 'no-cors'});
     // console.log(fbxfile);
     return url;

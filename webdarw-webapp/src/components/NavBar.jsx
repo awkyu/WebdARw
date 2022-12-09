@@ -73,7 +73,6 @@ function NavBar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <img 
             src={ process.env.PUBLIC_URL + '/assets/logo_webdarw.png' } 
             style={{width: '80px', marginRight: '20px', marginLeft: '0px'}}  />
@@ -95,7 +94,7 @@ function NavBar() {
           >
             WebdARw
           </Typography>
-          <Search sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Search sx={{ flexGrow: 1, display: { md: 'flex' } }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
