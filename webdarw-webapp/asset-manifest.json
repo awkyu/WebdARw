@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/WebdARw/webdarw-webapp/static/css/main.12e3cba0.css",
-    "main.js": "/WebdARw/webdarw-webapp/static/js/main.e3a598e2.js",
+    "main.js": "/WebdARw/webdarw-webapp/static/js/main.aa72b8cf.js",
     "static/js/787.0f9f3372.chunk.js": "/WebdARw/webdarw-webapp/static/js/787.0f9f3372.chunk.js",
     "index.html": "/WebdARw/webdarw-webapp/index.html",
     "main.12e3cba0.css.map": "/WebdARw/webdarw-webapp/static/css/main.12e3cba0.css.map",
-    "main.e3a598e2.js.map": "/WebdARw/webdarw-webapp/static/js/main.e3a598e2.js.map",
+    "main.aa72b8cf.js.map": "/WebdARw/webdarw-webapp/static/js/main.aa72b8cf.js.map",
     "787.0f9f3372.chunk.js.map": "/WebdARw/webdarw-webapp/static/js/787.0f9f3372.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.12e3cba0.css",
-    "static/js/main.e3a598e2.js"
+    "static/js/main.aa72b8cf.js"
   ]
 }
