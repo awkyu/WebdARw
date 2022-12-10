@@ -47,25 +47,12 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-function NavBar() {
-//   const [anchorElNav, setAnchorElNav] = React.useState(null);
-//   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-//   const handleOpenNavMenu = (event) => {
-//     setAnchorElNav(event.currentTarget);
-//   };
-//   const handleOpenUserMenu = (event) => {
-//     setAnchorElUser(event.currentTarget);
-//   };
 
-//   const handleCloseNavMenu = () => {
-//     setAnchorElNav(null);
-//   };
-
-//   const handleCloseUserMenu = () => {
-//     setAnchorElUser(null);
-//   };
-
+function NavBar({ itemSearch, setItemSearch }) {
+  const handleSearchChange = (e) => {
+    setItemSearch(e.target.value);
+  }
   return (
     <AppBar 
     position="static"
@@ -75,7 +62,8 @@ function NavBar() {
         <Toolbar disableGutters>
           <img 
             src={ process.env.PUBLIC_URL + '/assets/logo_webdarw.png' } 
-            style={{width: '80px', marginRight: '20px', marginLeft: '0px'}}  />
+            style={{width: '80px', marginRight: '20px', marginLeft: '0px'}}
+            alt="WebdARw Logo"  />
           <Typography
             variant="h5"
             noWrap
@@ -101,7 +89,8 @@ function NavBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              
+              value={itemSearch}
+              onChange={handleSearchChange}
             />
           </Search>
         </Toolbar>

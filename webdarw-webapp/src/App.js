@@ -17,6 +17,8 @@ function App() {
   const [alertOpen, setAlertOpen] = useState(false);
   const [copiedContent, setCopiedContent] = useState();
 
+  const [itemSearch, setItemSearch] = useState("");
+
   let [searchParams, setSearchParams] = useSearchParams();
 
 
@@ -46,12 +48,25 @@ function App() {
   return (
     <div className="App">
       <header className='App-header'>
-        <NavBar />
+        <NavBar itemSearch={itemSearch} setItemSearch={setItemSearch} />
         <CopyAlert alertOpen={alertOpen} setAlertOpen={setAlertOpen} copiedContent={copiedContent} />
 
-        <FBXCardContainer dbInformation={realtimeDBData} setFbxVisible={setFbxVisible} setFbxReference={setFbxReference} fbxFile={fbxFile} setSearchParams={setSearchParams} setAlertOpen={setAlertOpen} setCopiedContent={setCopiedContent} />
+        <FBXCardContainer 
+          dbInformation={realtimeDBData} 
+          setFbxVisible={setFbxVisible} 
+          setFbxReference={setFbxReference} 
+          fbxFile={fbxFile} 
+          setSearchParams={setSearchParams} 
+          setAlertOpen={setAlertOpen} 
+          setCopiedContent={setCopiedContent}
+          itemSearch={itemSearch} />
 
-        <ModelViewerPopup fbxVisible={fbxVisible} setFbxVisible={setFbxVisible} setFbxReference={setFbxReference} fbxFile={fbxFile} setSearchParams={setSearchParams} />
+        <ModelViewerPopup 
+          fbxVisible={fbxVisible} 
+          setFbxVisible={setFbxVisible} 
+          setFbxReference={setFbxReference} 
+          fbxFile={fbxFile} 
+          setSearchParams={setSearchParams} />
       </header>
     </div>
   );
